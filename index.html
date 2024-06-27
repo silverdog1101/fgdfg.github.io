@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA BP 팩</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .pack {
+            border: 2px solid #333;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .player {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .player img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="pack" onclick="openPack()">
+        <h1>BP 팩 열기</h1>
+    </div>
+
+    <div class="player" id="player">
+        <src="" alt="선수 사진" id="playerImage">
+        <p id="playerName"></p>
+    </div>
+
+    <script>
+        var players = [
+            { name: "1000억BP" },
+            { name: "1조"},
+            { name: "1000000000000000조"},
+            // 여기에 다른 선수들의 이름과 이미지를 추가할 수 있습니다.
+        ];
+
+        function openPack() {
+            var randomIndex = Math.floor(Math.random() * players.length);
+            var player = players[randomIndex];
+
+            document.getElementById("playerImage").src = player.image;
+            document.getElementById("playerName").textContent = "BP: " + player.name;
+        }
+    </script>
+</body>
+</html>
+
